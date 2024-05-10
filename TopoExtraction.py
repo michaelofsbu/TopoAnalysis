@@ -179,6 +179,8 @@ def _degree(image, k, i, j):
     neighbor = [(kk,ii,jj) for kk in range(k-1, k+2) for ii in range(i-1,i+2) for jj in range(j-1,j+2)]
     sum = 0
     for (kk, ii, jj) in neighbor:
+        if (kk, ii, jj) == (k, i, j):
+            continue
         try:
             if image[kk, ii, jj] == 255:
                 sum += 1
